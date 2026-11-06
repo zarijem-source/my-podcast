@@ -15,7 +15,6 @@ headers = {
     "Accept": "application/vnd.github.v3+json"
 }
 
-# オープンな Issue を取得（古い順）
 url = f"https://api.github.com/repos/{REPO}/issues?state=open&sort=created&direction=asc"
 res = requests.get(url, headers=headers)
 if res.status_code != 200:
