@@ -1,0 +1,131 @@
+cat << 'EOF' > delete.html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>エピソード削除</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+    h1 { font-size: 1.25rem; }
+    .card { border: 1px solid #e1e4e8; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .title { font-weight: bold; margin-bottom: 8px; word-break: break-all; }
+    .date { font-size: 0.85rem; color: #586069; margin-bottom: 12px; }
+    button { background-color: #d73a49; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    button:disabled { background-color: #949494; cursor: not-allowed; }
+    #token-input { width: 100%; box-sizing: border-box; padding: 8px; margin-bottom: 16px; border: 1px solid #ccc; border-radius: 6px; }
+    #status { margin-bottom: 16px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>ポッドキャスト エピソード管理</h1>
+  <label for="token-input">GitHub Personal Access Token (PAT):</label>
+  <input type="password" id="token-input" placeholder="ghp_..." />
+  <div id="status">読み込み中...</div>
+  <div id="episodes"></div>
+
+  <script>
+    const OWNER = "zarijem-source";
+    const REPO = "my-podcast";
+    const WORKFLOW_ID = "delete_episode.yml";
+
+    const tokenInput = document.getElementById("token-input");
+    const statusDiv = document.getElementById("status");
+    const listDiv = document.getElementById("episodes");
+
+    const savedToken = localStorage.getItem("gh_pat");
+    if (savedToken) {
+      tokenInput.value = savedToken;
+    }
+
+    tokenInput.addEventListener("change", () => {
+      localStorage.setItem("gh_pat", tokenInput.value.trim());
+    });
+
+    async function loadFeed() {
+      try {
+        const res = await fetch("feed.xml?t=" + Date.now());
+        if (!res.ok) throw new Error("feed.xml の取得に失敗しました");
+        const text = await res.text();
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, "application/xml");
+        const items = xml.querySelectorAll("item");
+
+        listDiv.innerHTML = "";
+        if (items.length === 0) {
+          statusDiv.innerText = "エピソードはありません。";
+          return;
+        }
+        statusDiv.innerText = `全 ${items.length} 件のエピソード`;
+
+        items.forEach(item => {
+          const title = item.querySelector("title")?.textContent || "無題";
+          const pubDate = item.querySelector("pubDate")?.textContent || "";
+          const enclosure = item.querySelector("enclosure");
+          const url = enclosure ? enclosure.getAttribute("url") : "";
+          const fileName = url.split("/").pop();
+
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = `
+            <div class="title">${title}</div>
+            <div class="date">${pubDate} (${fileName})</div>
+            <button onclick="deleteEpisode('${fileName}', this)">削除する</button>
+          `;
+          listDiv.appendChild(card);
+        });
+      } catch (err) {
+        statusDiv.innerText = "エラー: " + err.message;
+      }
+    }
+
+    async function deleteEpisode(fileName, btn) {
+      const token = tokenInput.value.trim();
+      if (!token) {
+        alert("GitHub Personal Access Token を入力してください。");
+        return;
+      }
+      if (!confirm(`本当に「${fileName}」を削除しますか？`)) {
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerText = "削除中...";
+
+      try {
+        const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${WORKFLOW_ID}/dispatches`, {
+          method: "POST",
+          headers: {
+            "Accept": "application/vnd.github.v3+json",
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            ref: "main",
+            inputs: {
+              filename: fileName
+            }
+          })
+        });
+
+        if (res.ok) {
+          alert("削除リクエストを送信しました。Actionsの完了をお待ちください。");
+          setTimeout(loadFeed, 3000);
+        } else {
+          const errData = await res.json();
+          alert("削除失敗: " + (errData.message || res.statusText));
+          btn.disabled = false;
+          btn.innerText = "削除する";
+        }
+      } catch (err) {
+        alert("エラー: " + err.message);
+        btn.disabled = false;
+        btn.innerText = "削除する";
+      }
+    }
+
+    loadFeed();
+  </script>
+</body>
+</html>
+EOF
