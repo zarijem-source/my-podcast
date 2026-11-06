@@ -4,7 +4,7 @@ import subprocess
 import requests
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-REPO = os.environ.get("GITHUB_REPOSITORY")  # 例: "zarijem-source/my-podcast"
+REPO = os.environ.get("GITHUB_REPOSITORY")
 
 if not GITHUB_TOKEN or not REPO:
     print("Error: GITHUB_TOKEN または GITHUB_REPOSITORY が設定されていません。")
@@ -15,7 +15,7 @@ headers = {
     "Accept": "application/vnd.github.v3+json"
 }
 
-# 1. オープンな Issue を取得（古い順にソート）
+# オープンな Issue を取得（古い順）
 url = f"https://api.github.com/repos/{REPO}/issues?state=open&sort=created&direction=asc"
 res = requests.get(url, headers=headers)
 if res.status_code != 200:
@@ -29,17 +29,13 @@ if not issues:
 
 print(f"未処理の記事が {len(issues)} 件見つかりました。順次処理を開始します。")
 
-# 2. 各 Issue を順番に処理
 for issue in issues:
-    # プルリクエストを除外
     if "pull_request" in issue:
         continue
 
     issue_number = issue["number"]
-    # タイトルまたは本文から URL を取得
     target_url = issue["title"].strip()
     if not (target_url.startswith("http://") or target_url.startswith("https://")):
-        # 本文側に URL があるか確認
         target_url = issue.get("body", "").strip()
 
     if not (target_url.startswith("http://") or target_url.startswith("https://")):
@@ -48,13 +44,11 @@ for issue in issues:
 
     print(f"\n--- [#{issue_number}] 処理開始: {target_url} ---")
     
-    # process_url.py を実行
     result = subprocess.run([sys.executable, "process_url.py", target_url])
     
     if result.returncode == 0:
         print(f"[#{issue_number}] 成功。Issue をクローズします。")
-        # Issue をクローズ
-        close_res = requests.patch(
+        requests.patch(
             f"https://api.github.com/repos/{REPO}/issues/{issue_number}",
             headers=headers,
             json={"state": "closed"}
