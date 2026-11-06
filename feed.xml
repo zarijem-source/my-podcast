@@ -6,12 +6,22 @@
     <description>Personal audio feed generated from web articles.</description>
     <language>ja</language>
     <atom:link href="https://zarijem-source.github.io/my-podcast/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 06 Nov 2026 14:15:49 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 14:33:52 +0000</lastBuildDate>
+    <item>
+      <title>家長の心配</title>
+      <link>https://zarijem-source.github.io/my-podcast/article_20261106_143250.m4a</link>
+      <description>家長の心配</description>
+      <pubDate>Fri, 06 Nov 2026 14:33:52 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261106_143250.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261106_143250.m4a" length="2008313" type="audio/x-m4a"/>
+      <itunes:duration>00:05:19</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>2026年版 植物工場の市場実態と将来展望 | 市場調査とマーケティングの矢野経済研究所</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261106_141426.m4a</link>
       <description>2026年版 植物工場の市場実態と将来展望 | 市場調査とマーケティングの矢野経済研究所</description>
-      <pubDate>Fri, 06 Nov 2026 14:15:49 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 14:32:17 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261106_141426.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261106_141426.m4a" length="5622506" type="audio/x-m4a"/>
       <itunes:duration>00:14:45</itunes:duration>
