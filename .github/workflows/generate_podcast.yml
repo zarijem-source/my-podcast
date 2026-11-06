@@ -1,0 +1,83 @@
+name: Generate Podcast from URL
+
+on:
+  workflow_dispatch:
+    inputs:
+      article_url:
+        description: 'Article URL to podcast'
+        required: true
+        type: string
+
+# 同時に複数の記事が送られた場合、順番待ち（キュー）にして衝突を防ぐ
+concurrency:
+  group: podcast-feed-update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリのチェックアウト
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python環境のセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: システムパッケージ（ffmpeg）のインストール
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: 依存Pythonライブラリのインストール
+        run: |
+          pip install google-genai trafilatura edge-tts
+
+      - name: 音声ファイルの生成
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python process_url.py "${{ github.event.inputs.article_url }}"
+
+      - name: フィード更新とコミット＆プッシュ
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 1. feed.xml を更新
+          if [ -f update_feed.py ]; then
+            python update_feed.py
+          fi
+
+          # 2. 生成された音声・タイトル・更新された feed.xml をすべて追加
+          git add *.m4a *.title feed.xml
+
+          # 3. 差分がなければ終了
+          if git diff --staged --quiet; then
+            echo "追加された変更はありません。"
+            exit 0
+          fi
+
+          # 4. コミットを作成
+          git commit -m "Add new episode via Gemini Pipeline [skip ci]"
+
+          # 5. プッシュ（直前のコミット競合がある場合のみ安全に最新を取得してリトライ）
+          for i in {1..3}; do
+            if git push origin main; then
+              echo "プッシュ成功"
+              break
+            fi
+            echo "プッシュ競合を検出。最新リモートを取得して feed.xml を再生成します (試行 $i/3)..."
+            git fetch origin main
+            git reset --soft origin/main
+            if [ -f update_feed.py ]; then
+              python update_feed.py
+            fi
+            git add *.m4a *.title feed.xml
+            git commit -m "Add new episode via Gemini Pipeline [skip ci]"
+          done

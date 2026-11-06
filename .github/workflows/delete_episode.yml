@@ -1,0 +1,72 @@
+name: Delete Podcast Episode
+
+on:
+  workflow_dispatch:
+    inputs:
+      file_name:
+        description: 'Audio file name to delete (e.g. article_xxxx.m4a)'
+        required: true
+        type: string
+
+concurrency:
+  group: podcast-feed-update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリのチェックアウト
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python環境のセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 音声ファイルとタイトルファイルの削除
+        run: |
+          FILE_NAME="${{ github.event.inputs.file_name }}"
+          BASE_NAME="${FILE_NAME%.*}"
+
+          echo "対象ファイル: $FILE_NAME"
+          # 音声ファイル本体を削除
+          rm -f "$FILE_NAME"
+          # 対になる .title ファイルも削除
+          rm -f "${BASE_NAME}.title"
+
+      - name: フィード再生成とコミット＆プッシュ
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [ -f update_feed.py ]; then
+            python update_feed.py
+          fi
+
+          git add -A
+          if git diff --staged --quiet; then
+            echo "変更はありません。"
+            exit 0
+          fi
+
+          git commit -m "Delete episode: ${{ github.event.inputs.file_name }} [skip ci]"
+
+          for i in {1..3}; do
+            if git push origin main; then
+              echo "プッシュ完了"
+              break
+            fi
+            git fetch origin main
+            git reset --soft origin/main
+            if [ -f update_feed.py ]; then
+              python update_feed.py
+            fi
+            git add -A
+            git commit -m "Delete episode: ${{ github.event.inputs.file_name }} [skip ci]"
+          done
