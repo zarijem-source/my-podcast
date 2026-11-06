@@ -36,7 +36,7 @@ jobs:
 
       - name: 依存Pythonライブラリのインストール
         run: |
-          pip install google-genai trafilatura edge-tts
+          pip install google-genai trafilatura edge-tts beautifulsoup4 pypdf
 
       - name: 音声ファイルの生成
         env:
