@@ -6,6 +6,6 @@
     <description>Personal audio feed generated from web articles.</description>
     <language>ja</language>
     <atom:link href="https://zarijem-source.github.io/my-podcast/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 06 Nov 2026 14:07:55 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 14:09:02 +0000</lastBuildDate>
   </channel>
 </rss>
