@@ -1,3 +1,4 @@
+cat << 'EOF' > process_url.py
 import sys
 import os
 import io
@@ -25,7 +26,6 @@ if not api_key:
     print("Error: GEMINI_API_KEY が環境変数に設定されていません。")
     sys.exit(1)
 
-# 1. コンテンツの取得（PDF判定およびアクセス拒否対策）
 print(f"URLを取得中: {article_url}")
 
 headers = {
@@ -37,7 +37,6 @@ headers = {
 raw_data = None
 content_type = ""
 
-# ブラウザ偽装ヘッダー付きで取得
 try:
     req = urllib.request.Request(article_url, headers=headers)
     with urllib.request.urlopen(req, timeout=30) as response:
@@ -51,11 +50,99 @@ except Exception as e:
         content_type = "text/html"
 
 if not raw_data:
-    print(f"Error: URLからコンテンツを取得できませんでした（アクセス拒否または無効なURL）: {article_url}")
+    print(f"Error: URLからコンテンツを取得できませんでした: {article_url}")
     sys.exit(1)
 
-# --- A. PDF の場合 ---
 is_pdf = article_url.lower().split("?")[0].endswith(".pdf") or "application/pdf" in content_type
+title = ""
+body_text = ""
 
 if is_pdf:
-    print
+    print("PDFドキュメントとして解析中...")
+    try:
+        reader = PdfReader(io.BytesIO(raw_data))
+        extracted_text = []
+        for page in reader.pages:
+            text = page.extract_text()
+            if text:
+                extracted_text.append(text)
+        body_text = "\n".join(extracted_text)
+        title = os.path.basename(urllib.parse.urlparse(article_url).path) or "PDF Document"
+    except Exception as e:
+        print(f"PDF解析エラー: {e}")
+        sys.exit(1)
+else:
+    print("Webページとして解析中...")
+    html_content = raw_data.decode("utf-8", errors="ignore")
+    soup = BeautifulSoup(html_content, "html.parser")
+    title = soup.title.string.strip() if soup.title and soup.title.string else "Web Article"
+    body_text = trafilatura.extract(html_content, include_comments=False, include_tables=False)
+    if not body_text:
+        body_text = soup.get_text(separator="\n", strip=True)
+
+if not body_text or len(body_text.strip()) < 50:
+    print("Error: 本文テキストを十分に抽出できませんでした。")
+    sys.exit(1)
+
+print(f"取得完了: タイトル『{title}』(本文長: {len(body_text)} 文字)")
+
+# 2. Gemini API で読み上げ原稿とタイトルを生成
+print("Gemini API で要約・原稿作成中...")
+client = genai.Client(api_key=api_key)
+
+prompt = f"""
+以下の記事テキストを元に、ポッドキャストで自然に聞き取れる読み上げ原稿（日本語）を作成してください。
+出力は以下のJSON形式のみで返してください（Markdownコードブロックは不要）:
+{{
+  "title": "記事の内容を表すキャッチーで簡潔な日本語タイトル",
+  "script": "ポッドキャストのパーソナリティが落ち着いて語りかけるような自然な話し言葉の原稿本文。"
+}}
+
+【記事タイトル】
+{title}
+
+【本文】
+{body_text[:12000]}
+"""
+
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents=prompt,
+    config=types.GenerateContentConfig(response_mime_type="application/json")
+)
+
+try:
+    data = json.loads(response.text)
+    clean_title = data.get("title", title).strip()
+    tts_script = data.get("script", "").strip()
+except Exception as e:
+    print(f"JSONパースエラー、代替テキスト抽出を試みます: {e}")
+    clean_title = title
+    tts_script = response.text.strip()
+
+print(f"生成されたタイトル: {clean_title}")
+
+# 3. edge-tts で音声合成 (.m4a)
+timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+audio_filename = f"episode_{timestamp}.m4a"
+title_filename = f"episode_{timestamp}.title"
+
+print(f"Edge TTS で音声を生成中 ({audio_filename})...")
+
+async def generate_speech():
+    communicate = edge_tts.Communicate(tts_script, voice="ja-JP-NanamiNeural")
+    await communicate.save(audio_filename)
+
+asyncio.run(generate_speech())
+
+# メタデータ保存用 .title ファイル作成
+with open(title_filename, "w", encoding="utf-8") as f:
+    f.write(clean_title)
+
+# 4. feed.xml の再生成スクリプトを実行
+if os.path.exists("generate_feed.py"):
+    print("generate_feed.py を実行して feed.xml を更新中...")
+    subprocess.run([sys.executable, "generate_feed.py"], check=True)
+
+print("単一URLの処理がすべて完了しました。")
+EOF
