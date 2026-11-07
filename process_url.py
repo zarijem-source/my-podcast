@@ -1,4 +1,3 @@
-
 import sys
 import os
 import io
@@ -106,7 +105,7 @@ prompt = f"""
 """
 
 response = client.models.generate_content(
-    model="gemini-2.5-flash",
+    model="gemini-3.8-flash",
     contents=prompt,
     config=types.GenerateContentConfig(response_mime_type="application/json")
 )
@@ -145,4 +144,3 @@ if os.path.exists("generate_feed.py"):
     subprocess.run([sys.executable, "generate_feed.py"], check=True)
 
 print("単一URLの処理がすべて完了しました。")
-EOF
