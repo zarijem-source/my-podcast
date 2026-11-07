@@ -2,7 +2,7 @@ name: Process Podcast Queue and Deploy
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened]
   workflow_dispatch:
 
 permissions:
