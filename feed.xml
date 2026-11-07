@@ -6,42 +6,22 @@
     <description>Personal audio feed generated from web articles.</description>
     <language>ja</language>
     <atom:link href="https://zarijem-source.github.io/my-podcast/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sat, 07 Nov 2026 16:11:36 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 22:34:13 +0000</lastBuildDate>
     <item>
-      <title>88-1.pdf</title>
-      <link>https://zarijem-source.github.io/my-podcast/article_20261107_160713.m4a</link>
-      <description>88-1.pdf</description>
-      <pubDate>Sat, 07 Nov 2026 16:11:35 +0000</pubDate>
-      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261107_160713.m4a</guid>
-      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261107_160713.m4a" length="8057597" type="audio/x-m4a"/>
-      <itunes:duration>00:22:27</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-    </item>
-    <item>
-      <title>000380923.pdf</title>
-      <link>https://zarijem-source.github.io/my-podcast/article_20261107_153118.m4a</link>
-      <description>000380923.pdf</description>
-      <pubDate>Sat, 07 Nov 2026 16:07:08 +0000</pubDate>
-      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261107_153118.m4a</guid>
-      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261107_153118.m4a" length="69137412" type="audio/x-m4a"/>
-      <itunes:duration>03:06:47</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-    </item>
-    <item>
-      <title>【AI で稼ぐ】第二回 ── 私が毎朝 やっている「読む」の手順。どこから取り、どう並べ、何を捨てるか(大型 514 社を三分で数えた実物つき)｜松田元</title>
-      <link>https://zarijem-source.github.io/my-podcast/article_20261107_153053.m4a</link>
-      <description>【AI で稼ぐ】第二回 ── 私が毎朝 やっている「読む」の手順。どこから取り、どう並べ、何を捨てるか(大型 514 社を三分で数えた実物つき)｜松田元</description>
-      <pubDate>Sat, 07 Nov 2026 15:31:12 +0000</pubDate>
-      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261107_153053.m4a</guid>
-      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261107_153053.m4a" length="509921" type="audio/x-m4a"/>
-      <itunes:duration>00:01:21</itunes:duration>
+      <title>Museの新機能「スペース」で、4人のMessengerグループ専用アプリを早速作ってみた｜柏木誠｜プロジェクトデザイナー</title>
+      <link>https://zarijem-source.github.io/my-podcast/article_20261107_223227.m4a</link>
+      <description>Museの新機能「スペース」で、4人のMessengerグループ専用アプリを早速作ってみた｜柏木誠｜プロジェクトデザイナー</description>
+      <pubDate>Sat, 07 Nov 2026 22:34:12 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261107_223227.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261107_223227.m4a" length="4630314" type="audio/x-m4a"/>
+      <itunes:duration>00:12:22</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
       <title>AIで稼ぐヒント：毎朝の「情報の読み方」をアップデートしよう</title>
       <link>https://zarijem-source.github.io/my-podcast/episode_20261107_051117.m4a</link>
       <description>AIで稼ぐヒント：毎朝の「情報の読み方」をアップデートしよう</description>
-      <pubDate>Sat, 07 Nov 2026 15:30:09 +0000</pubDate>
+      <pubDate>Sat, 07 Nov 2026 22:31:26 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/episode_20261107_051117.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/episode_20261107_051117.m4a" length="451296" type="audio/x-m4a"/>
       <itunes:duration>00:01:15</itunes:duration>
@@ -51,17 +31,47 @@
       <title>忙しい日々を整える「あえて何もしない時間」の贅沢</title>
       <link>https://zarijem-source.github.io/my-podcast/episode_20261107_045842.m4a</link>
       <description>忙しい日々を整える「あえて何もしない時間」の贅沢</description>
-      <pubDate>Sat, 07 Nov 2026 15:30:09 +0000</pubDate>
+      <pubDate>Sat, 07 Nov 2026 22:31:26 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/episode_20261107_045842.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/episode_20261107_045842.m4a" length="523584" type="audio/x-m4a"/>
       <itunes:duration>00:01:27</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
+      <title>88-1.pdf</title>
+      <link>https://zarijem-source.github.io/my-podcast/article_20261107_160713.m4a</link>
+      <description>88-1.pdf</description>
+      <pubDate>Sat, 07 Nov 2026 22:31:26 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261107_160713.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261107_160713.m4a" length="8057597" type="audio/x-m4a"/>
+      <itunes:duration>00:22:27</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>000380923.pdf</title>
+      <link>https://zarijem-source.github.io/my-podcast/article_20261107_153118.m4a</link>
+      <description>000380923.pdf</description>
+      <pubDate>Sat, 07 Nov 2026 22:31:26 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261107_153118.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261107_153118.m4a" length="69137412" type="audio/x-m4a"/>
+      <itunes:duration>03:06:47</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>【AI で稼ぐ】第二回 ── 私が毎朝 やっている「読む」の手順。どこから取り、どう並べ、何を捨てるか(大型 514 社を三分で数えた実物つき)｜松田元</title>
+      <link>https://zarijem-source.github.io/my-podcast/article_20261107_153053.m4a</link>
+      <description>【AI で稼ぐ】第二回 ── 私が毎朝 やっている「読む」の手順。どこから取り、どう並べ、何を捨てるか(大型 514 社を三分で数えた実物つき)｜松田元</description>
+      <pubDate>Sat, 07 Nov 2026 22:31:26 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261107_153053.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261107_153053.m4a" length="509921" type="audio/x-m4a"/>
+      <itunes:duration>00:01:21</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
       <title>生成AIでは得られない「一次情報」の力</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261106_162238.m4a</link>
       <description>生成AIでは得られない「一次情報」の力</description>
-      <pubDate>Sat, 07 Nov 2026 15:30:09 +0000</pubDate>
+      <pubDate>Sat, 07 Nov 2026 22:31:26 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261106_162238.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261106_162238.m4a" length="7567654" type="audio/x-m4a"/>
       <itunes:duration>00:20:04</itunes:duration>
@@ -71,7 +81,7 @@
       <title>第786回：1兆円が20分で消えた日―非中央集権を救うのは、中央集権であるという構造矛盾｜松田元</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261106_143801.m4a</link>
       <description>第786回：1兆円が20分で消えた日―非中央集権を救うのは、中央集権であるという構造矛盾｜松田元</description>
-      <pubDate>Sat, 07 Nov 2026 15:30:09 +0000</pubDate>
+      <pubDate>Sat, 07 Nov 2026 22:31:26 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261106_143801.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261106_143801.m4a" length="15656268" type="audio/x-m4a"/>
       <itunes:duration>00:41:35</itunes:duration>
@@ -81,7 +91,7 @@
       <title>文体を作るのは「書きまくる」じゃなくて「読みまくる」｜高井宏章</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261106_143437.m4a</link>
       <description>文体を作るのは「書きまくる」じゃなくて「読みまくる」｜高井宏章</description>
-      <pubDate>Sat, 07 Nov 2026 15:30:09 +0000</pubDate>
+      <pubDate>Sat, 07 Nov 2026 22:31:26 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261106_143437.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261106_143437.m4a" length="246912" type="audio/x-m4a"/>
       <itunes:duration>00:00:39</itunes:duration>
@@ -91,7 +101,7 @@
       <title>2026年版 植物工場の市場実態と将来展望 | 市場調査とマーケティングの矢野経済研究所</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261106_141426.m4a</link>
       <description>2026年版 植物工場の市場実態と将来展望 | 市場調査とマーケティングの矢野経済研究所</description>
-      <pubDate>Sat, 07 Nov 2026 15:30:09 +0000</pubDate>
+      <pubDate>Sat, 07 Nov 2026 22:31:26 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261106_141426.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261106_141426.m4a" length="5622506" type="audio/x-m4a"/>
       <itunes:duration>00:14:45</itunes:duration>
