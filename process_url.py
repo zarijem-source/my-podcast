@@ -6,6 +6,7 @@ import re
 import datetime
 import subprocess
 import asyncio
+import time
 import urllib.parse
 import urllib.request
 import edge_tts
@@ -85,7 +86,7 @@ if not body_text or len(body_text.strip()) < 50:
 
 print(f"取得完了: タイトル『{title}』(本文長: {len(body_text)} 文字)")
 
-# 2. Gemini API で読み上げ原稿とタイトルを生成
+# 2. Gemini API で読み上げ原稿とタイトルを生成（リトライ処理付き）
 print("Gemini API で要約・原稿作成中...")
 client = genai.Client(api_key=api_key)
 
@@ -104,11 +105,26 @@ prompt = f"""
 {body_text[:12000]}
 """
 
-response = client.models.generate_content(
-    model="gemini-3.8-flash",
-    contents=prompt,
-    config=types.GenerateContentConfig(response_mime_type="application/json")
-)
+max_retries = 3
+response = None
+
+for attempt in range(max_retries):
+    try:
+        response = client.models.generate_content(
+            model="gemini-3.8-flash",
+            contents=prompt,
+            config=types.GenerateContentConfig(response_mime_type="application/json")
+        )
+        print(f"Gemini API 呼び出し成功 (試行 {attempt + 1} 回目)")
+        break
+    except Exception as e:
+        print(f"Gemini API 試行 {attempt + 1}/{max_retries} 失敗: {e}")
+        if attempt < max_retries - 1:
+            wait_sec = 15 * (attempt + 1)
+            print(f"{wait_sec} 秒待機して再試行します...")
+            time.sleep(wait_sec)
+        else:
+            raise e
 
 try:
     data = json.loads(response.text)
