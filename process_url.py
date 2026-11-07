@@ -1,4 +1,4 @@
-cat << 'EOF' > process_url.py
+
 import sys
 import os
 import io
