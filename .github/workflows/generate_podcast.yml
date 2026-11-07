@@ -64,7 +64,7 @@ jobs:
           fi
 
           # 4. コミットを作成
-          git commit -m "Add new episode via Gemini Pipeline [skip ci]"
+          git commit -m "Add new episode via Gemini Pipeline "
 
           # 5. プッシュ（直前のコミット競合がある場合のみ安全に最新を取得してリトライ）
           for i in {1..3}; do
@@ -79,5 +79,5 @@ jobs:
               python update_feed.py
             fi
             git add *.m4a *.title feed.xml
-            git commit -m "Add new episode via Gemini Pipeline [skip ci]"
+            git commit -m "Add new episode via Gemini Pipeline "
           done

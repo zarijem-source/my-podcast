@@ -50,11 +50,16 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if [ -f update_feed.py ]; then
+            python update_feed.py
+          fi
+          
           git add -A
           if git diff --staged --quiet; then
             echo "変更はありません。"
           else
-            git commit -m "Update feed and audio files [skip ci]"
+            git commit -m "Update feed and audio files"
             git pull --rebase origin main
             git push origin main
           fi

@@ -55,7 +55,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Delete episode: ${{ github.event.inputs.file_name }} [skip ci]"
+          git commit -m "Delete episode: ${{ github.event.inputs.file_name }} "
 
           for i in {1..3}; do
             if git push origin main; then
@@ -68,5 +68,5 @@ jobs:
               python update_feed.py
             fi
             git add -A
-            git commit -m "Delete episode: ${{ github.event.inputs.file_name }} [skip ci]"
+            git commit -m "Delete episode: ${{ github.event.inputs.file_name }} "
           done
