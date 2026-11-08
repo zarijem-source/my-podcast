@@ -55,17 +55,18 @@ jobs:
             python update_feed.py
           fi
           
-          # 1. コミットする前に、リモートの最新状態を強制優先（-X theirs）で安全に取り込む
+          # 1. リモートの最新状態をフェッチしておく
           git fetch origin main
-          git pull --rebase -X theirs origin main || true
-
-          # 2. 変更を追加してコミット
+          
+          # 2. 変更をステージに追加
           git add -A
           if git diff --staged --quiet; then
             echo "変更はありません。"
           else
+            # 3. コミットする
             git commit -m "Update feed and audio files"
             
-            # 3. プッシュ（もしこの間に別の更新が入って弾かれても、自動で一度引っ張ってから再プッシュする）
-            git push origin main || (git pull --rebase -X theirs origin main && git push origin main)
+            # 4. rebaseではなく通常のmergeを使い、競合したらリモート（-X theirs）を強制採用してプッシュ
+            git pull --no-rebase -X theirs origin main || true
+            git push origin main
           fi
