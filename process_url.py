@@ -81,28 +81,45 @@ else:
     if metadata and metadata.title:
         fallback_title = metadata.title.strip()
 
-print("Gemini API を使って原稿とタイトルを生成中...")
+print("Gemini API を使って原稿の分割と生成中...")
 client = genai.Client(api_key=api_key)
 
-input_text = body_text[:30000]
+# 長文を丸ごと、または十分な長さをカバーできるように拡張
+input_text = body_text[:60000]
 
 prompt = f"""
 あなたは日本語の音声コンテンツ編集者です。
-提供されたWeb記事や文学作品の本文を解析し、個人用ポッドキャスト朗読用のデータを生成してください。
+提供された長文の記事や文学作品の本文を解析し、個人用ポッドキャスト朗読用のデータを生成してください。
+音声ファイルが長すぎるとファイルサイズやリスニングの面で問題が生じるため、必要に応じて**複数のパート（JSONの配列形式）**に分割してください（1パートあたり概ね10分〜15分程度のボリュームを目安に分割）。
 
-【重要指示】
-1. title (タイトル):
-   - 必ず自然で魅力的な「日本語」で記述してください。英語タイトルは厳禁です。
-   - 記事や作品の核心、題名、テーマが直感的に伝わるタイトル（30文字以内）。
-2. safe_slug (スラッグ):
-   - 英数字とハイフンのみ。小文字。
-3. speech_text (朗読テキスト):
-   - 提供された本文から、図表、広告、無関係なナビゲーションを排除し、朗読に最適な純粋なテキストにしてください。
+【重要指示・原文尊重の原則】
+1. 情報の欠落禁止: 原文のニュアンス、事実関係、筆者の主張や論理展開を絶対に省略・要約しすぎず、すべての重要な情報を各パートにしっかりと割り振ってください。
+2. ナビゲーション追加: パート2以降がある場合、冒頭に「続いて後半では〜」といった聴き手向けの自然なサポート文（接続の導入）を入れてください。
+3. title (タイトル): 各パートごとに「〇〇（第1部：前半）」のように、自然で魅力的な日本語の連番タイトルにしてください。
+4. safe_slug (スラッグ): 英数字とハイフンのみ。小文字。
+
+以下のJSONフォーマット（配列）で必ず出力してください。分割が不要な短い記事であっても、要素が1つの配列 `[...]` で出力してください。
+
+[
+  {{
+    "part": 1,
+    "title": "記事のタイトル（第1部：前半）",
+    "safe_slug": "article-slug",
+    "speech_text": "朗読テキスト（パート1）..."
+  }},
+  {{
+    "part": 2,
+    "title": "記事のタイトル（第2部：後半）",
+    "safe_slug": "article-slug",
+    "speech_text": "朗読テキスト（パート2）..."
+  }}
+]
 
 【提供された本文】
 {input_text}
 """
 
+parts_data = []
 try:
     response = client.models.generate_content(
         model="gemini-2.0-flash",
@@ -113,53 +130,71 @@ try:
             temperature=0.2,
         )
     )
-    data = json.loads(response.text)
-    title = data.get("title", fallback_title)
-    safe_slug = data.get("safe_slug", "article")
-    speech_text = data.get("speech_text", body_text)
+    parsed_json = json.loads(response.text)
+    if isinstance(parsed_json, list):
+        parts_data = parsed_json
+    elif isinstance(parsed_json, dict):
+        parts_data = [parsed_json]
 except Exception as e:
-    print(f"Gemini API処理で例外が発生したため、フォールバックします: {e}")
-    title = fallback_title
-    safe_slug = "article"
-    speech_text = body_text
+    print(f"Gemini API処理で例外が発生したため、分割なしのフォールバックを行います: {e}")
 
-if not title or title.strip() == "Web Article":
-    title = fallback_title
-
-safe_slug = re.sub(r'[^a-zA-Z0-9\-]', '', safe_slug).lower()[:30]
-if not safe_slug:
-    safe_slug = "article"
-
-print(f"決定タイトル: {title}")
-print(f"スラッグ: {safe_slug}")
-print(f"朗読文字数: {len(speech_text)} 文字")
-
-timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-temp_mp3 = f"temp_{timestamp}.mp3"
-final_m4a = f"{safe_slug}_{timestamp}.m4a"
+# 万が一パースに失敗した場合は従来の単一構成として扱う
+if not parts_data:
+    parts_data = [{
+        "part": 1,
+        "title": fallback_title,
+        "safe_slug": "article",
+        "speech_text": body_text
+    }]
 
 VOICE = "ja-JP-NanamiNeural"
+base_timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
-async def generate_speech():
-    communicate = edge_tts.Communicate(speech_text, VOICE, rate="+5%")
-    await communicate.save(temp_mp3)
+# 各パートごとに順番に音声ファイルを生成・保存する
+for idx, part_item in enumerate(parts_data):
+    p_title = part_item.get("title", fallback_title)
+    if not p_title or p_title.strip() == "Web Article":
+        p_title = fallback_title
 
-asyncio.run(generate_speech())
+    p_slug = part_item.get("safe_slug", "article")
+    p_slug = re.sub(r'[^a-zA-Z0-9\-]', '', p_slug).lower()[:30]
+    if not p_slug:
+        p_slug = "article"
 
-subprocess.run([
-    "ffmpeg", "-y", "-i", temp_mp3,
-    "-metadata", f"title={title}",
-    "-ac", "1",
-    "-c:a", "aac",
-    "-b:a", "48k",
-    final_m4a
-], check=True)
+    p_text = part_item.get("speech_text", body_text)
 
-title_file = os.path.splitext(final_m4a)[0] + ".title"
-with open(title_file, "w", encoding="utf-8") as f:
-    f.write(title)
+    print(f"\n--- パート {idx + 1} / {len(parts_data)} 処理中 ---")
+    print(f"決定タイトル: {p_title}")
+    print(f"スラッグ: {p_slug}")
+    print(f"朗読文字数: {len(p_text)} 文字")
 
-if os.path.exists(temp_mp3):
-    os.remove(temp_mp3)
+    # 複数パートになる場合はタイムスタンプに連番やインデックスを付与してユニークにする
+    part_suffix = f"_pt{idx + 1}" if len(parts_data) > 1 else ""
+    temp_mp3 = f"temp_{base_timestamp}{part_suffix}.mp3"
+    final_m4a = f"{p_slug}_{base_timestamp}{part_suffix}.m4a"
 
-print(f"高音質音声の生成完了: {final_m4a} (タイトル: {title})")
+    async def generate_speech():
+        communicate = edge_tts.Communicate(p_text, VOICE, rate="+5%")
+        await communicate.save(temp_mp3)
+
+    asyncio.run(generate_speech())
+
+    subprocess.run([
+        "ffmpeg", "-y", "-i", temp_mp3,
+        "-metadata", f"title={p_title}",
+        "-ac", "1",
+        "-c:a", "aac",
+        "-b:a", "48k",
+        final_m4a
+    ], check=True)
+
+    title_file = os.path.splitext(final_m4a)[0] + ".title"
+    with open(title_file, "w", encoding="utf-8") as f:
+        f.write(p_title)
+
+    if os.path.exists(temp_mp3):
+        os.remove(temp_mp3)
+
+    print(f"音声生成完了: {final_m4a} (タイトル: {p_title})")
+
+print(f"\n全 {len(parts_data)} パートの生成処理が完了しました。")
