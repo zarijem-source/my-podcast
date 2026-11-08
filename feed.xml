@@ -6,12 +6,12 @@
     <description>Personal audio feed generated from web articles.</description>
     <language>ja</language>
     <atom:link href="https://zarijem-source.github.io/my-podcast/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 08 Nov 2026 02:01:15 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 04:46:14 +0000</lastBuildDate>
     <item>
       <title>サウンドプログラミング入門：文字で書く音楽の世界</title>
       <link>https://zarijem-source.github.io/my-podcast/sound-programming-mml-basics_20261108_020022.m4a</link>
       <description>サウンドプログラミング入門：文字で書く音楽の世界</description>
-      <pubDate>Sun, 08 Nov 2026 02:01:14 +0000</pubDate>
+      <pubDate>Sun, 08 Nov 2026 04:45:23 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/sound-programming-mml-basics_20261108_020022.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/sound-programming-mml-basics_20261108_020022.m4a" length="1814921" type="audio/x-m4a"/>
       <itunes:duration>00:04:48</itunes:duration>
@@ -21,7 +21,7 @@
       <title>器楽的幻覚（梶井基次郎）</title>
       <link>https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a</link>
       <description>器楽的幻覚（梶井基次郎）</description>
-      <pubDate>Sun, 08 Nov 2026 01:57:48 +0000</pubDate>
+      <pubDate>Sun, 08 Nov 2026 04:45:23 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a" length="2739656" type="audio/x-m4a"/>
       <itunes:duration>00:07:14</itunes:duration>
