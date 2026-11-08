@@ -55,18 +55,15 @@ jobs:
             python update_feed.py
           fi
           
-          # 1. 常に最新のリモート状態をフェッチしておく
+          # 1. ここが決定打：rebaseを一切やめ、リモートの最新状態を強制的に取得して手元を完全に同期する
           git fetch origin main
+          git reset --hard origin/main
           
-          # 2. 万が一、手元のファイルがリモートとズレていたら、リモートの変更を強制優先してマージする設定にする
-          git config merge.conflictstyle diff3
-          git checkout -f origin/main || true
-          
-          # （もし batch_process.py や update_feed.py で生成されたファイル群を再度ステージングする）
-          # ※ここでは一度最新にした上で、今回の成果物を上乗せします
+          # 2. 同期した上で、今回の音声生成やfeed更新スクリプトをもう一度走らせて最新の成果物を作る
           if [ -f update_feed.py ]; then
             python update_feed.py
           fi
+          # （※ batch_process.py で生成された新しい音声ファイルや更新された feed.xml をここで確実に対象にする）
 
           git add -A
           if git diff --staged --quiet; then
@@ -74,7 +71,6 @@ jobs:
           else
             git commit -m "Update feed and audio files"
             
-            # 3. プッシュ前に再度最新を pull（--no-rebase を強制し、衝突時はリモートを --theirs で完全優先）
-            git pull --no-rebase -X theirs origin main || true
-            git push origin main
+            # 3. 最後に強制プッシュ（万が一の時もリモートを正とする）
+            git push origin main --force-with-lease
           fi
