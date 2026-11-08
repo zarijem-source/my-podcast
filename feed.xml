@@ -6,22 +6,82 @@
     <description>Personal audio feed generated from web articles.</description>
     <language>ja</language>
     <atom:link href="https://zarijem-source.github.io/my-podcast/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 08 Nov 2026 06:40:55 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 07:07:41 +0000</lastBuildDate>
     <item>
-      <title>哲学と自然の鏡――リチャード・ローティが拓く「対話」としての哲学</title>
-      <link>https://zarijem-source.github.io/my-podcast/philosophy-and-the-mirror-of-n_20261108_064021.m4a</link>
-      <description>哲学と自然の鏡――リチャード・ローティが拓く「対話」としての哲学</description>
-      <pubDate>Sun, 08 Nov 2026 06:40:53 +0000</pubDate>
-      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/philosophy-and-the-mirror-of-n_20261108_064021.m4a</guid>
-      <enclosure url="https://zarijem-source.github.io/my-podcast/philosophy-and-the-mirror-of-n_20261108_064021.m4a" length="1285537" type="audio/x-m4a"/>
-      <itunes:duration>00:03:21</itunes:duration>
+      <title>リチャード・ローティ『偶然性・アイロニー・連帯』（第2部：アイロニーから連帯の思想へ）</title>
+      <link>https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt2.m4a</link>
+      <description>リチャード・ローティ『偶然性・アイロニー・連帯』（第2部：アイロニーから連帯の思想へ）</description>
+      <pubDate>Sun, 08 Nov 2026 07:07:39 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt2.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt2.m4a" length="2515114" type="audio/x-m4a"/>
+      <itunes:duration>00:06:37</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>リチャード・ローティ『偶然性・アイロニー・連帯』（第1部：偶然性と二つのオブセッション）</title>
+      <link>https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt1.m4a</link>
+      <description>リチャード・ローティ『偶然性・アイロニー・連帯』（第1部：偶然性と二つのオブセッション）</description>
+      <pubDate>Sun, 08 Nov 2026 07:06:54 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt1.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt1.m4a" length="3677952" type="audio/x-m4a"/>
+      <itunes:duration>00:09:42</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>aa01.pdf</title>
+      <link>https://zarijem-source.github.io/my-podcast/article_20261108_065936.m4a</link>
+      <description>aa01.pdf</description>
+      <pubDate>Sun, 08 Nov 2026 07:04:04 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_065936.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_065936.m4a" length="10793114" type="audio/x-m4a"/>
+      <itunes:duration>00:29:06</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>自営線マイクログリッドのはじめかた（第4部：全国の先進導入事例と参考情報）</title>
+      <link>https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt4.m4a</link>
+      <description>自営線マイクログリッドのはじめかた（第4部：全国の先進導入事例と参考情報）</description>
+      <pubDate>Sun, 08 Nov 2026 06:57:54 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt4.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt4.m4a" length="3243950" type="audio/x-m4a"/>
+      <itunes:duration>00:08:28</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>自営線マイクログリッドのはじめかた（第3部：リスク事前評価とモデル検証）</title>
+      <link>https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt3.m4a</link>
+      <description>自営線マイクログリッドのはじめかた（第3部：リスク事前評価とモデル検証）</description>
+      <pubDate>Sun, 08 Nov 2026 06:56:54 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt3.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt3.m4a" length="2621130" type="audio/x-m4a"/>
+      <itunes:duration>00:06:54</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>自営線マイクログリッドのはじめかた（第2部：事業構築の6つのステップと法制度）</title>
+      <link>https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt2.m4a</link>
+      <description>自営線マイクログリッドのはじめかた（第2部：事業構築の6つのステップと法制度）</description>
+      <pubDate>Sun, 08 Nov 2026 06:55:58 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt2.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt2.m4a" length="2620519" type="audio/x-m4a"/>
+      <itunes:duration>00:06:55</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>自営線マイクログリッドのはじめかた（第1部：基礎知識と再エネ調達の全体像）</title>
+      <link>https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt1.m4a</link>
+      <description>自営線マイクログリッドのはじめかた（第1部：基礎知識と再エネ調達の全体像）</description>
+      <pubDate>Sun, 08 Nov 2026 06:54:36 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt1.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt1.m4a" length="3065447" type="audio/x-m4a"/>
+      <itunes:duration>00:08:02</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
       <title>サウンドプログラミング入門：文字で書く音楽の世界</title>
       <link>https://zarijem-source.github.io/my-podcast/sound-programming-mml-basics_20261108_020022.m4a</link>
       <description>サウンドプログラミング入門：文字で書く音楽の世界</description>
-      <pubDate>Sun, 08 Nov 2026 06:37:54 +0000</pubDate>
+      <pubDate>Sun, 08 Nov 2026 06:51:04 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/sound-programming-mml-basics_20261108_020022.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/sound-programming-mml-basics_20261108_020022.m4a" length="1814921" type="audio/x-m4a"/>
       <itunes:duration>00:04:48</itunes:duration>
@@ -31,7 +91,7 @@
       <title>リチャード・ローティ『哲学と自然の鏡』解説（全1部）</title>
       <link>https://zarijem-source.github.io/my-podcast/richard-rorty-philosophy-and-t_20261108_054024.m4a</link>
       <description>リチャード・ローティ『哲学と自然の鏡』解説（全1部）</description>
-      <pubDate>Sun, 08 Nov 2026 06:37:54 +0000</pubDate>
+      <pubDate>Sun, 08 Nov 2026 06:51:04 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/richard-rorty-philosophy-and-t_20261108_054024.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/richard-rorty-philosophy-and-t_20261108_054024.m4a" length="1199432" type="audio/x-m4a"/>
       <itunes:duration>00:03:07</itunes:duration>
@@ -41,7 +101,7 @@
       <title>リチャード・ローティの『リベラリズム』――その論理構造の解明（第2部：アイロニー・連帯・普遍化のゆくえ）</title>
       <link>https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt2.m4a</link>
       <description>リチャード・ローティの『リベラリズム』――その論理構造の解明（第2部：アイロニー・連帯・普遍化のゆくえ）</description>
-      <pubDate>Sun, 08 Nov 2026 06:37:54 +0000</pubDate>
+      <pubDate>Sun, 08 Nov 2026 06:51:04 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt2.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt2.m4a" length="2616248" type="audio/x-m4a"/>
       <itunes:duration>00:06:51</itunes:duration>
@@ -51,17 +111,27 @@
       <title>リチャード・ローティの『リベラリズム』――その論理構造の解明（第1部：公私の区分と偶然性の承認）</title>
       <link>https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt1.m4a</link>
       <description>リチャード・ローティの『リベラリズム』――その論理構造の解明（第1部：公私の区分と偶然性の承認）</description>
-      <pubDate>Sun, 08 Nov 2026 06:37:54 +0000</pubDate>
+      <pubDate>Sun, 08 Nov 2026 06:51:04 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt1.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt1.m4a" length="2743056" type="audio/x-m4a"/>
       <itunes:duration>00:07:13</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
+      <title>哲学と自然の鏡――リチャード・ローティが拓く「対話」としての哲学</title>
+      <link>https://zarijem-source.github.io/my-podcast/philosophy-and-the-mirror-of-n_20261108_064021.m4a</link>
+      <description>哲学と自然の鏡――リチャード・ローティが拓く「対話」としての哲学</description>
+      <pubDate>Sun, 08 Nov 2026 06:51:04 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/philosophy-and-the-mirror-of-n_20261108_064021.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/philosophy-and-the-mirror-of-n_20261108_064021.m4a" length="1285537" type="audio/x-m4a"/>
+      <itunes:duration>00:03:21</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
       <title>器楽的幻覚（梶井基次郎）</title>
       <link>https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a</link>
       <description>器楽的幻覚（梶井基次郎）</description>
-      <pubDate>Sun, 08 Nov 2026 06:37:54 +0000</pubDate>
+      <pubDate>Sun, 08 Nov 2026 06:51:04 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a" length="2739656" type="audio/x-m4a"/>
       <itunes:duration>00:07:14</itunes:duration>
