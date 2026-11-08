@@ -6,46 +6,6 @@
     <description>Personal audio feed generated from web articles.</description>
     <language>ja</language>
     <atom:link href="https://zarijem-source.github.io/my-podcast/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 08 Nov 2026 00:50:28 +0000</lastBuildDate>
-    <item>
-      <title>Museの新機能「スペース」で、4人のMessengerグループ専用アプリを早速作ってみた｜柏木誠｜プロジェクトデザイナー</title>
-      <link>https://zarijem-source.github.io/my-podcast/article_20261107_223227.m4a</link>
-      <description>Museの新機能「スペース」で、4人のMessengerグループ専用アプリを早速作ってみた｜柏木誠｜プロジェクトデザイナー</description>
-      <pubDate>Sun, 08 Nov 2026 00:50:14 +0000</pubDate>
-      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261107_223227.m4a</guid>
-      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261107_223227.m4a" length="4630314" type="audio/x-m4a"/>
-      <itunes:duration>00:05:00</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-    </item>
-    <item>
-      <title>88-1.pdf</title>
-      <link>https://zarijem-source.github.io/my-podcast/article_20261107_160713.m4a</link>
-      <description>88-1.pdf</description>
-      <pubDate>Sun, 08 Nov 2026 00:50:14 +0000</pubDate>
-      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261107_160713.m4a</guid>
-      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261107_160713.m4a" length="8057597" type="audio/x-m4a"/>
-      <itunes:duration>00:05:00</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-    </item>
-    <item>
-      <title>000380923.pdf</title>
-      <link>https://zarijem-source.github.io/my-podcast/article_20261107_153118.m4a</link>
-      <description>000380923.pdf</description>
-      <pubDate>Sun, 08 Nov 2026 00:50:14 +0000</pubDate>
-      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261107_153118.m4a</guid>
-      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261107_153118.m4a" length="69137412" type="audio/x-m4a"/>
-      <itunes:duration>00:05:00</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-    </item>
-    <item>
-      <title>【AI で稼ぐ】第二回 ── 私が毎朝 やっている「読む」の手順。どこから取り、どう並べ、何を捨てるか(大型 514 社を三分で数えた実物つき)｜松田元</title>
-      <link>https://zarijem-source.github.io/my-podcast/article_20261107_153053.m4a</link>
-      <description>【AI で稼ぐ】第二回 ── 私が毎朝 やっている「読む」の手順。どこから取り、どう並べ、何を捨てるか(大型 514 社を三分で数えた実物つき)｜松田元</description>
-      <pubDate>Sun, 08 Nov 2026 00:50:14 +0000</pubDate>
-      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261107_153053.m4a</guid>
-      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261107_153053.m4a" length="509921" type="audio/x-m4a"/>
-      <itunes:duration>00:05:00</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-    </item>
+    <lastBuildDate>Sun, 08 Nov 2026 01:11:33 +0000</lastBuildDate>
   </channel>
 </rss>
