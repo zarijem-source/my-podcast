@@ -6,6 +6,16 @@
     <description>Personal audio feed generated from web articles.</description>
     <language>ja</language>
     <atom:link href="https://zarijem-source.github.io/my-podcast/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 08 Nov 2026 01:11:33 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 01:26:35 +0000</lastBuildDate>
+    <item>
+      <title>器楽的幻覚（梶井基次郎）</title>
+      <link>https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a</link>
+      <description>器楽的幻覚（梶井基次郎）</description>
+      <pubDate>Sun, 08 Nov 2026 01:26:34 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a" length="2739656" type="audio/x-m4a"/>
+      <itunes:duration>00:07:14</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
   </channel>
 </rss>
