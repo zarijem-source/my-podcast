@@ -55,18 +55,26 @@ jobs:
             python update_feed.py
           fi
           
-          # 1. リモートの最新状態をフェッチしておく
+          # 1. 常に最新のリモート状態をフェッチしておく
           git fetch origin main
           
-          # 2. 変更をステージに追加
+          # 2. 万が一、手元のファイルがリモートとズレていたら、リモートの変更を強制優先してマージする設定にする
+          git config merge.conflictstyle diff3
+          git checkout -f origin/main || true
+          
+          # （もし batch_process.py や update_feed.py で生成されたファイル群を再度ステージングする）
+          # ※ここでは一度最新にした上で、今回の成果物を上乗せします
+          if [ -f update_feed.py ]; then
+            python update_feed.py
+          fi
+
           git add -A
           if git diff --staged --quiet; then
             echo "変更はありません。"
           else
-            # 3. コミットする
             git commit -m "Update feed and audio files"
             
-            # 4. rebaseではなく通常のmergeを使い、競合したらリモート（-X theirs）を強制採用してプッシュ
+            # 3. プッシュ前に再度最新を pull（--no-rebase を強制し、衝突時はリモートを --theirs で完全優先）
             git pull --no-rebase -X theirs origin main || true
             git push origin main
           fi
