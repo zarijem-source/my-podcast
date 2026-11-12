@@ -6,62 +6,62 @@
     <description>Personal audio feed generated from web articles.</description>
     <language>ja</language>
     <atom:link href="https://zarijem-source.github.io/my-podcast/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 08 Nov 2026 15:39:13 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 23:15:16 +0000</lastBuildDate>
     <item>
-      <title>「仙台オフィス市場」の現況と見通し（第2部：大型再開発の行方と2030年までの賃料予測）</title>
-      <link>https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt2.m4a</link>
-      <description>「仙台オフィス市場」の現況と見通し（第2部：大型再開発の行方と2030年までの賃料予測）</description>
-      <pubDate>Sun, 08 Nov 2026 15:39:13 +0000</pubDate>
-      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt2.m4a</guid>
-      <enclosure url="https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt2.m4a" length="2088131" type="audio/x-m4a"/>
-      <itunes:duration>00:05:32</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-    </item>
-    <item>
-      <title>「仙台オフィス市場」の現況と見通し（第1部：スタートアップ・半導体産業の進展と都心再開発）</title>
-      <link>https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt1.m4a</link>
-      <description>「仙台オフィス市場」の現況と見通し（第1部：スタートアップ・半導体産業の進展と都心再開発）</description>
-      <pubDate>Sun, 08 Nov 2026 15:39:13 +0000</pubDate>
-      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt1.m4a</guid>
-      <enclosure url="https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt1.m4a" length="2728239" type="audio/x-m4a"/>
-      <itunes:duration>00:07:10</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-    </item>
-    <item>
-      <title>「仙台オフィス市場」の現況と見通し（2026年）</title>
-      <link>https://zarijem-source.github.io/my-podcast/article_20261108_153050.m4a</link>
-      <description>「仙台オフィス市場」の現況と見通し（2026年）</description>
-      <pubDate>Sun, 08 Nov 2026 15:39:13 +0000</pubDate>
-      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_153050.m4a</guid>
-      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_153050.m4a" length="2732154" type="audio/x-m4a"/>
-      <itunes:duration>00:07:17</itunes:duration>
+      <title>或阿呆の一生</title>
+      <link>https://zarijem-source.github.io/my-podcast/article_20261112_231200.m4a</link>
+      <description>或阿呆の一生</description>
+      <pubDate>Thu, 12 Nov 2026 23:15:12 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261112_231200.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261112_231200.m4a" length="8360671" type="audio/x-m4a"/>
+      <itunes:duration>00:22:36</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
       <title>サウンドプログラミング入門：文字で書く音楽の世界</title>
       <link>https://zarijem-source.github.io/my-podcast/sound-programming-mml-basics_20261108_020022.m4a</link>
       <description>サウンドプログラミング入門：文字で書く音楽の世界</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/sound-programming-mml-basics_20261108_020022.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/sound-programming-mml-basics_20261108_020022.m4a" length="1814921" type="audio/x-m4a"/>
       <itunes:duration>00:04:48</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
+      <title>「仙台オフィス市場」の現況と見通し（第2部：大型再開発の行方と2030年までの賃料予測）</title>
+      <link>https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt2.m4a</link>
+      <description>「仙台オフィス市場」の現況と見通し（第2部：大型再開発の行方と2030年までの賃料予測）</description>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt2.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt2.m4a" length="2088131" type="audio/x-m4a"/>
+      <itunes:duration>00:05:32</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
       <title>「連帯」は、バラバラな私たちが、バラバラなまま共に生きていくためのノウハウ【バラバラな世界で共に生きる】</title>
       <link>https://zarijem-source.github.io/my-podcast/solidarity-living-together-in-_20261108_071448.m4a</link>
       <description>「連帯」は、バラバラな私たちが、バラバラなまま共に生きていくためのノウハウ【バラバラな世界で共に生きる】</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/solidarity-living-together-in-_20261108_071448.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/solidarity-living-together-in-_20261108_071448.m4a" length="68240" type="audio/x-m4a"/>
       <itunes:duration>00:00:10</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
+      <title>「仙台オフィス市場」の現況と見通し（第1部：スタートアップ・半導体産業の進展と都心再開発）</title>
+      <link>https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt1.m4a</link>
+      <description>「仙台オフィス市場」の現況と見通し（第1部：スタートアップ・半導体産業の進展と都心再開発）</description>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt1.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/sendai-office-market-2026-part_20261108_153544_pt1.m4a" length="2728239" type="audio/x-m4a"/>
+      <itunes:duration>00:07:10</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
       <title>リチャード・ローティとリベラリズムの要求（第2部：好奇心のエートスと受動的不正）</title>
       <link>https://zarijem-source.github.io/my-podcast/rorty-demands-of-liberalism-pa_20261108_071114_pt2.m4a</link>
       <description>リチャード・ローティとリベラリズムの要求（第2部：好奇心のエートスと受動的不正）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/rorty-demands-of-liberalism-pa_20261108_071114_pt2.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/rorty-demands-of-liberalism-pa_20261108_071114_pt2.m4a" length="2135334" type="audio/x-m4a"/>
       <itunes:duration>00:05:36</itunes:duration>
@@ -71,7 +71,7 @@
       <title>リチャード・ローティとリベラリズムの要求（第1部：連帯と残酷さの地平）</title>
       <link>https://zarijem-source.github.io/my-podcast/rorty-demands-of-liberalism-pa_20261108_071114_pt1.m4a</link>
       <description>リチャード・ローティとリベラリズムの要求（第1部：連帯と残酷さの地平）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/rorty-demands-of-liberalism-pa_20261108_071114_pt1.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/rorty-demands-of-liberalism-pa_20261108_071114_pt1.m4a" length="2400470" type="audio/x-m4a"/>
       <itunes:duration>00:06:22</itunes:duration>
@@ -81,7 +81,7 @@
       <title>リチャード・ローティ『哲学と自然の鏡』解説（全1部）</title>
       <link>https://zarijem-source.github.io/my-podcast/richard-rorty-philosophy-and-t_20261108_054024.m4a</link>
       <description>リチャード・ローティ『哲学と自然の鏡』解説（全1部）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/richard-rorty-philosophy-and-t_20261108_054024.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/richard-rorty-philosophy-and-t_20261108_054024.m4a" length="1199432" type="audio/x-m4a"/>
       <itunes:duration>00:03:07</itunes:duration>
@@ -91,7 +91,7 @@
       <title>リチャード・ローティの『リベラリズム』――その論理構造の解明（第2部：アイロニー・連帯・普遍化のゆくえ）</title>
       <link>https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt2.m4a</link>
       <description>リチャード・ローティの『リベラリズム』――その論理構造の解明（第2部：アイロニー・連帯・普遍化のゆくえ）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt2.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt2.m4a" length="2616248" type="audio/x-m4a"/>
       <itunes:duration>00:06:51</itunes:duration>
@@ -101,7 +101,7 @@
       <title>リチャード・ローティの『リベラリズム』――その論理構造の解明（第1部：公私の区分と偶然性の承認）</title>
       <link>https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt1.m4a</link>
       <description>リチャード・ローティの『リベラリズム』――その論理構造の解明（第1部：公私の区分と偶然性の承認）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt1.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/richard-rorty-liberalism-part-_20261108_054306_pt1.m4a" length="2743056" type="audio/x-m4a"/>
       <itunes:duration>00:07:13</itunes:duration>
@@ -111,7 +111,7 @@
       <title>リチャード・ローティ『偶然性・アイロニー・連帯』（第2部：アイロニーから連帯の思想へ）</title>
       <link>https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt2.m4a</link>
       <description>リチャード・ローティ『偶然性・アイロニー・連帯』（第2部：アイロニーから連帯の思想へ）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt2.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt2.m4a" length="2515114" type="audio/x-m4a"/>
       <itunes:duration>00:06:37</itunes:duration>
@@ -121,7 +121,7 @@
       <title>リチャード・ローティ『偶然性・アイロニー・連帯』（第1部：偶然性と二つのオブセッション）</title>
       <link>https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt1.m4a</link>
       <description>リチャード・ローティ『偶然性・アイロニー・連帯』（第1部：偶然性と二つのオブセッション）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt1.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/richard-rorty-contingency-part_20261108_070529_pt1.m4a" length="3677952" type="audio/x-m4a"/>
       <itunes:duration>00:09:42</itunes:duration>
@@ -131,7 +131,7 @@
       <title>自営線マイクログリッドのはじめかた（第4部：全国の先進導入事例と参考情報）</title>
       <link>https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt4.m4a</link>
       <description>自営線マイクログリッドのはじめかた（第4部：全国の先進導入事例と参考情報）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt4.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt4.m4a" length="3243950" type="audio/x-m4a"/>
       <itunes:duration>00:08:28</itunes:duration>
@@ -141,7 +141,7 @@
       <title>自営線マイクログリッドのはじめかた（第3部：リスク事前評価とモデル検証）</title>
       <link>https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt3.m4a</link>
       <description>自営線マイクログリッドのはじめかた（第3部：リスク事前評価とモデル検証）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt3.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt3.m4a" length="2621130" type="audio/x-m4a"/>
       <itunes:duration>00:06:54</itunes:duration>
@@ -151,7 +151,7 @@
       <title>自営線マイクログリッドのはじめかた（第2部：事業構築の6つのステップと法制度）</title>
       <link>https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt2.m4a</link>
       <description>自営線マイクログリッドのはじめかた（第2部：事業構築の6つのステップと法制度）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt2.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt2.m4a" length="2620519" type="audio/x-m4a"/>
       <itunes:duration>00:06:55</itunes:duration>
@@ -161,7 +161,7 @@
       <title>自営線マイクログリッドのはじめかた（第1部：基礎知識と再エネ調達の全体像）</title>
       <link>https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt1.m4a</link>
       <description>自営線マイクログリッドのはじめかた（第1部：基礎知識と再エネ調達の全体像）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt1.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/private-line-microgrid-guide-p_20261108_065353_pt1.m4a" length="3065447" type="audio/x-m4a"/>
       <itunes:duration>00:08:02</itunes:duration>
@@ -171,7 +171,7 @@
       <title>哲学と自然の鏡――リチャード・ローティが拓く「対話」としての哲学</title>
       <link>https://zarijem-source.github.io/my-podcast/philosophy-and-the-mirror-of-n_20261108_064021.m4a</link>
       <description>哲学と自然の鏡――リチャード・ローティが拓く「対話」としての哲学</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/philosophy-and-the-mirror-of-n_20261108_064021.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/philosophy-and-the-mirror-of-n_20261108_064021.m4a" length="1285537" type="audio/x-m4a"/>
       <itunes:duration>00:03:21</itunes:duration>
@@ -181,7 +181,7 @@
       <title>芥川龍之介『往生絵巻』（全編）</title>
       <link>https://zarijem-source.github.io/my-podcast/ojou-emaki_20261108_074855.m4a</link>
       <description>芥川龍之介『往生絵巻』（全編）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/ojou-emaki_20261108_074855.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/ojou-emaki_20261108_074855.m4a" length="3256733" type="audio/x-m4a"/>
       <itunes:duration>00:09:03</itunes:duration>
@@ -191,7 +191,7 @@
       <title>久保田万太郎氏（芥川龍之介）</title>
       <link>https://zarijem-source.github.io/my-podcast/kubota-mantaro-shi-akutagawa_20261108_082020.m4a</link>
       <description>久保田万太郎氏（芥川龍之介）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/kubota-mantaro-shi-akutagawa_20261108_082020.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/kubota-mantaro-shi-akutagawa_20261108_082020.m4a" length="1580284" type="audio/x-m4a"/>
       <itunes:duration>00:04:12</itunes:duration>
@@ -201,7 +201,7 @@
       <title>芥川龍之介『黄粱夢』</title>
       <link>https://zarijem-source.github.io/my-podcast/koryomu-akutagawa_20261108_082539.m4a</link>
       <description>芥川龍之介『黄粱夢』</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/koryomu-akutagawa_20261108_082539.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/koryomu-akutagawa_20261108_082539.m4a" length="1099754" type="audio/x-m4a"/>
       <itunes:duration>00:02:56</itunes:duration>
@@ -211,7 +211,7 @@
       <title>器楽的幻覚（梶井基次郎）</title>
       <link>https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a</link>
       <description>器楽的幻覚（梶井基次郎）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/kigakuteki-genkaku_20261108_012538.m4a" length="2739656" type="audio/x-m4a"/>
       <itunes:duration>00:07:14</itunes:duration>
@@ -221,7 +221,7 @@
       <title>家長の心配（フランツ・カフカ）</title>
       <link>https://zarijem-source.github.io/my-podcast/kafka-die-sorge-des-hausvaters_20261108_073944.m4a</link>
       <description>家長の心配（フランツ・カフカ）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/kafka-die-sorge-des-hausvaters_20261108_073944.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/kafka-die-sorge-des-hausvaters_20261108_073944.m4a" length="1656436" type="audio/x-m4a"/>
       <itunes:duration>00:04:20</itunes:duration>
@@ -231,7 +231,7 @@
       <title>芥川龍之介「槐」</title>
       <link>https://zarijem-source.github.io/my-podcast/enju-akutagawa_20261108_075122.m4a</link>
       <description>芥川龍之介「槐」</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/enju-akutagawa_20261108_075122.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/enju-akutagawa_20261108_075122.m4a" length="783196" type="audio/x-m4a"/>
       <itunes:duration>00:02:03</itunes:duration>
@@ -241,7 +241,7 @@
       <title>英雄の器（芥川龍之介）</title>
       <link>https://zarijem-source.github.io/my-podcast/eiyu-no-utsuwa_20261108_074504.m4a</link>
       <description>英雄の器（芥川龍之介）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/eiyu-no-utsuwa_20261108_074504.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/eiyu-no-utsuwa_20261108_074504.m4a" length="1927625" type="audio/x-m4a"/>
       <itunes:duration>00:05:11</itunes:duration>
@@ -251,17 +251,27 @@
       <title>芥川龍之介「編輯者と作家」（全1部）</title>
       <link>https://zarijem-source.github.io/my-podcast/editor-and-writer_20261108_085352.m4a</link>
       <description>芥川龍之介「編輯者と作家」（全1部）</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/editor-and-writer_20261108_085352.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/editor-and-writer_20261108_085352.m4a" length="1937038" type="audio/x-m4a"/>
       <itunes:duration>00:05:11</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
+      <title>「仙台オフィス市場」の現況と見通し（2026年）</title>
+      <link>https://zarijem-source.github.io/my-podcast/article_20261108_153050.m4a</link>
+      <description>「仙台オフィス市場」の現況と見通し（2026年）</description>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
+      <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_153050.m4a</guid>
+      <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_153050.m4a" length="2732154" type="audio/x-m4a"/>
+      <itunes:duration>00:07:17</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
       <title>俳画展覧会を観て</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261108_085144.m4a</link>
       <description>俳画展覧会を観て</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_085144.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_085144.m4a" length="1683970" type="audio/x-m4a"/>
       <itunes:duration>00:04:47</itunes:duration>
@@ -271,7 +281,7 @@
       <title>樗牛の事</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261108_084758.m4a</link>
       <description>樗牛の事</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_084758.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_084758.m4a" length="4376451" type="audio/x-m4a"/>
       <itunes:duration>00:12:06</itunes:duration>
@@ -281,7 +291,7 @@
       <title>創作</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261108_084657.m4a</link>
       <description>創作</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_084657.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_084657.m4a" length="3221611" type="audio/x-m4a"/>
       <itunes:duration>00:08:50</itunes:duration>
@@ -291,7 +301,7 @@
       <title>侏儒の言葉</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261108_082956.m4a</link>
       <description>侏儒の言葉</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_082956.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_082956.m4a" length="47265217" type="audio/x-m4a"/>
       <itunes:duration>02:10:51</itunes:duration>
@@ -301,7 +311,7 @@
       <title>黄粱夢</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261108_082057.m4a</link>
       <description>黄粱夢</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_082057.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_082057.m4a" length="1362052" type="audio/x-m4a"/>
       <itunes:duration>00:04:05</itunes:duration>
@@ -311,7 +321,7 @@
       <title>開化の殺人</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261108_080551.m4a</link>
       <description>開化の殺人</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_080551.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_080551.m4a" length="13082600" type="audio/x-m4a"/>
       <itunes:duration>00:37:01</itunes:duration>
@@ -321,7 +331,7 @@
       <title>開化の良人</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261108_075758.m4a</link>
       <description>開化の良人</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_075758.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_075758.m4a" length="22994104" type="audio/x-m4a"/>
       <itunes:duration>01:03:37</itunes:duration>
@@ -331,7 +341,7 @@
       <title>お時儀</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261108_075620.m4a</link>
       <description>お時儀</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_075620.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_075620.m4a" length="5436712" type="audio/x-m4a"/>
       <itunes:duration>00:15:13</itunes:duration>
@@ -341,7 +351,7 @@
       <title>aa01.pdf</title>
       <link>https://zarijem-source.github.io/my-podcast/article_20261108_065936.m4a</link>
       <description>aa01.pdf</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/article_20261108_065936.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/article_20261108_065936.m4a" length="10793114" type="audio/x-m4a"/>
       <itunes:duration>00:29:06</itunes:duration>
@@ -351,7 +361,7 @@
       <title>青空文庫 図書カード No.81 ガイド案内</title>
       <link>https://zarijem-source.github.io/my-podcast/aozora-card-81-guide_20261108_081640.m4a</link>
       <description>青空文庫 図書カード No.81 ガイド案内</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/aozora-card-81-guide_20261108_081640.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/aozora-card-81-guide_20261108_081640.m4a" length="210079" type="audio/x-m4a"/>
       <itunes:duration>00:00:33</itunes:duration>
@@ -361,7 +371,7 @@
       <title>青空文庫 図書カード No.3810 案内</title>
       <link>https://zarijem-source.github.io/my-podcast/aozora-card-3810_20261108_085134.m4a</link>
       <description>青空文庫 図書カード No.3810 案内</description>
-      <pubDate>Sun, 08 Nov 2026 15:38:26 +0000</pubDate>
+      <pubDate>Thu, 12 Nov 2026 23:09:55 +0000</pubDate>
       <guid isPermaLink="true">https://zarijem-source.github.io/my-podcast/aozora-card-3810_20261108_085134.m4a</guid>
       <enclosure url="https://zarijem-source.github.io/my-podcast/aozora-card-3810_20261108_085134.m4a" length="151377" type="audio/x-m4a"/>
       <itunes:duration>00:00:24</itunes:duration>
