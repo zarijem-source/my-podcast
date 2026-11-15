@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 import io
 import json
 import re
@@ -29,7 +29,7 @@ print(f"URLを取得中: {article_url}")
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/pdf,*/*;q=0.8",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/pdf,image/*,*/*;q=0.8",
     "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
 }
 
@@ -52,11 +52,43 @@ if not raw_data:
     print(f"Error: URLからコンテンツを取得できませんでした: {article_url}")
     sys.exit(1)
 
-is_pdf = article_url.lower().split("?")[0].endswith(".pdf") or "application/pdf" in content_type
+# 判定フラグの準備
+clean_url = article_url.lower().split("?")[0]
+is_image = clean_url.endswith((".png", ".jpg", ".jpeg", ".webp", ".tiff", ".bmp")) or "image/" in content_type
+is_pdf = clean_url.endswith(".pdf") or "application/pdf" in content_type
+
 fallback_title = "無題の記事"
 body_text = ""
 
-if is_pdf:
+# Geminiクライアントの初期化（OCRおよび台本生成で共用）
+client = genai.Client(api_key=api_key)
+
+if is_image:
+    print("画像ファイルとして検知しました。GeminiのOCR機能でテキストを抽出します...")
+    ext = os.path.splitext(urllib.parse.urlparse(article_url).path)[1] or ".png"
+    temp_ocr_filename = f"temp_ocr_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}{ext}"
+    with open(temp_ocr_filename, "wb") as f:
+        f.write(raw_data)
+    try:
+        print("Geminiへ画像をアップロード中...")
+        uploaded_file = client.files.upload(file=temp_ocr_filename)
+        ocr_response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=[
+                uploaded_file,
+                "この画像に記載されているすべてのテキストを漏らさず正確に読み取り、抽出してください。レイアウトや段落構造を意識し、読みやすい連続したテキストとして出力してください。"
+            ]
+        )
+        body_text = ocr_response.text
+        fallback_title = os.path.basename(urllib.parse.urlparse(article_url).path) or "Image Document"
+    except Exception as e:
+        print(f"画像OCRエラー: {e}")
+        sys.exit(1)
+    finally:
+        if os.path.exists(temp_ocr_filename):
+            os.remove(temp_ocr_filename)
+
+elif is_pdf:
     print("PDFドキュメントとして解析中...")
     try:
         reader = PdfReader(io.BytesIO(raw_data))
@@ -67,22 +99,58 @@ if is_pdf:
                 extracted_text.append(text)
         body_text = "\n".join(extracted_text)
         fallback_title = os.path.basename(urllib.parse.urlparse(article_url).path) or "PDF Document"
+
+        # 抽出されたテキストが極端に少ない場合（スキャンPDF等の文字が埋め込まれていないケース）はGemini OCRへ切り替え
+        if len(body_text.strip()) < 50:
+            print("⚠️ PDF内のテキストが検出されなかったため（スキャンPDFの可能性）、GeminiのOCR機能でテキストを抽出します...")
+            temp_pdf_filename = f"temp_ocr_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
+            with open(temp_pdf_filename, "wb") as f:
+                f.write(raw_data)
+            try:
+                print("GeminiへPDFファイルをアップロードしてOCRを実行中...")
+                uploaded_file = client.files.upload(file=temp_pdf_filename)
+                ocr_response = client.models.generate_content(
+                    model="gemini-2.5-flash",
+                    contents=[
+                        uploaded_file,
+                        "このPDFに記載されているすべてのテキストを漏らさず正確に読み取り、抽出してください。レイアウトや段落構造を意識し、読みやすい連続したテキストとして出力してください。"
+                    ]
+                )
+                body_text = ocr_response.text
+                print(f"✨ Gemini OCR完了: 約 {len(body_text)} 文字を抽出しました。")
+            except Exception as e:
+                print(f"PDFのGemini OCRエラー: {e}")
+                sys.exit(1)
+            finally:
+                if os.path.exists(temp_pdf_filename):
+                    os.remove(temp_pdf_filename)
+
     except Exception as e:
         print(f"PDF解析エラー: {e}")
         sys.exit(1)
 else:
     print("HTMLドキュメントとして解析中...")
     extracted = trafilatura.extract(raw_data, include_comments=False, include_tables=False)
-    if not extracted:
+    if extracted:
+        body_text = extracted
+    else:
+        # フォールバックとしてBeautifulSoupでHTMLから直接テキスト抽出を試みる
+        soup = BeautifulSoup(raw_data, "html.parser")
+        body_text = soup.get_text(separator="\n", strip=True)
+
+    if not body_text:
         print("Error: 記事本文を抽出できませんでした。")
         sys.exit(1)
-    body_text = extracted
+
     metadata = trafilatura.extract_metadata(raw_data)
     if metadata and metadata.title:
         fallback_title = metadata.title.strip()
 
+if not body_text or len(body_text.strip()) < 10:
+    print("Error: 有効なテキストが取得できませんでした。")
+    sys.exit(1)
+
 print("Gemini API を使って原稿の分割と生成中...")
-client = genai.Client(api_key=api_key)
 
 # 長文を丸ごと、または十分な長さをカバーできるように拡張
 input_text = body_text[:60000]
