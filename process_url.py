@@ -6,6 +6,7 @@ import re
 import datetime
 import subprocess
 import asyncio
+import time
 import urllib.parse
 import urllib.request
 import edge_tts
@@ -60,7 +61,7 @@ is_pdf = clean_url.endswith(".pdf") or "application/pdf" in content_type
 fallback_title = "無題の記事"
 body_text = ""
 
-# Geminiクライアントの初期化（OCRおよび台本生成で共用）
+# Geminiクライアントの初期化
 client = genai.Client(api_key=api_key)
 
 if is_image:
@@ -72,6 +73,16 @@ if is_image:
     try:
         print("Geminiへ画像をアップロード中...")
         uploaded_file = client.files.upload(file=temp_ocr_filename)
+        
+        # 処理完了（ACTIVE）になるまで待機
+        while uploaded_file.state.name == "PROCESSING":
+            print("画像ファイルを処理中...", end="\r")
+            time.sleep(2)
+            uploaded_file = client.files.get(name=uploaded_file.name)
+            
+        if uploaded_file.state.name != "ACTIVE":
+            raise Exception(f"ファイルの処理に失敗しました。状態: {uploaded_file.state.name}")
+
         ocr_response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=[
@@ -100,7 +111,7 @@ elif is_pdf:
         body_text = "\n".join(extracted_text)
         fallback_title = os.path.basename(urllib.parse.urlparse(article_url).path) or "PDF Document"
 
-        # 抽出されたテキストが極端に少ない場合（スキャンPDF等の文字が埋め込まれていないケース）はGemini OCRへ切り替え
+        # 抽出されたテキストが極端に少ない場合はGemini OCRへ切り替え
         if len(body_text.strip()) < 50:
             print("⚠️ PDF内のテキストが検出されなかったため（スキャンPDFの可能性）、GeminiのOCR機能でテキストを抽出します...")
             temp_pdf_filename = f"temp_ocr_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
@@ -109,6 +120,16 @@ elif is_pdf:
             try:
                 print("GeminiへPDFファイルをアップロードしてOCRを実行中...")
                 uploaded_file = client.files.upload(file=temp_pdf_filename)
+                
+                # 処理完了（ACTIVE）になるまで待機
+                while uploaded_file.state.name == "PROCESSING":
+                    print("PDFファイルを処理・インデックス化中...", end="\r")
+                    time.sleep(2)
+                    uploaded_file = client.files.get(name=uploaded_file.name)
+                    
+                if uploaded_file.state.name != "ACTIVE":
+                    raise Exception(f"PDFファイルの処理に失敗しました。状態: {uploaded_file.state.name}")
+
                 ocr_response = client.models.generate_content(
                     model="gemini-2.5-flash",
                     contents=[
@@ -117,7 +138,7 @@ elif is_pdf:
                     ]
                 )
                 body_text = ocr_response.text
-                print(f"✨ Gemini OCR完了: 約 {len(body_text)} 文字を抽出しました。")
+                print(f"\n✨ Gemini OCR完了: 約 {len(body_text)} 文字を抽出しました。")
             except Exception as e:
                 print(f"PDFのGemini OCRエラー: {e}")
                 sys.exit(1)
@@ -134,7 +155,6 @@ else:
     if extracted:
         body_text = extracted
     else:
-        # フォールバックとしてBeautifulSoupでHTMLから直接テキスト抽出を試みる
         soup = BeautifulSoup(raw_data, "html.parser")
         body_text = soup.get_text(separator="\n", strip=True)
 
@@ -152,7 +172,6 @@ if not body_text or len(body_text.strip()) < 10:
 
 print("Gemini API を使って原稿の分割と生成中...")
 
-# 長文を丸ごと、または十分な長さをカバーできるように拡張
 input_text = body_text[:60000]
 
 prompt = f"""
@@ -190,7 +209,7 @@ prompt = f"""
 parts_data = []
 try:
     response = client.models.generate_content(
-        model="gemini-3.8-flash",
+        model="gemini-2.5-flash",
         contents=prompt,
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
@@ -206,7 +225,6 @@ try:
 except Exception as e:
     print(f"Gemini API処理で例外が発生したため、分割なしのフォールバックを行います: {e}")
 
-# 万が一パースに失敗した場合は従来の単一構成として扱う
 if not parts_data:
     parts_data = [{
         "part": 1,
@@ -218,7 +236,6 @@ if not parts_data:
 VOICE = "ja-JP-NanamiNeural"
 base_timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
-# 各パートごとに順番に音声ファイルを生成・保存する
 for idx, part_item in enumerate(parts_data):
     p_title = part_item.get("title", fallback_title)
     if not p_title or p_title.strip() == "Web Article":
@@ -236,7 +253,6 @@ for idx, part_item in enumerate(parts_data):
     print(f"スラッグ: {p_slug}")
     print(f"朗読文字数: {len(p_text)} 文字")
 
-    # 複数パートになる場合はタイムスタンプに連番やインデックスを付与してユニークにする
     part_suffix = f"_pt{idx + 1}" if len(parts_data) > 1 else ""
     temp_mp3 = f"temp_{base_timestamp}{part_suffix}.mp3"
     final_m4a = f"{p_slug}_{base_timestamp}{part_suffix}.m4a"
